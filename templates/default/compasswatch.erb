@@ -1,0 +1,62 @@
+#!/bin/bash
+
+case "$1" in
+  start)
+  printf "%-50s" "Starting compasswatch..."
+	
+  I=0
+  for CONFIG in `ls -f <%= @conf_dir %>/*/config.rb`; do
+    PID=`compass watch -q --poll -c $CONFIG > <%= @log_dir %>/compasswatch.log 2>&1 & echo $!`
+    if [ -z $PID ]; then
+      printf "%s\n" "Fail"
+    else
+      echo $PID > /var/run/compasswatch${I}.pid
+      printf "%s\n" "Ok"
+    fi
+    I=$((I+1))
+  done
+  ;;
+  status)
+  printf "%-50s" "Checking compasswatch..."
+		
+  I=0
+  for CONFIG in `ls -f <%= @conf_dir %>/*/config.rb`; do
+    if [ -f /var/run/compasswatch${I}.pid ]; then
+      PID=`cat /var/run/compasswatch${I}.pid`
+      if [ -z "`ps axf | grep ${PID} | grep -v grep`" ]; then
+        printf "%s\n" "Process dead but pidfile exists"
+      else
+        echo "Running"
+      fi
+    else
+      printf "%s\n" "Service not running"
+    fi
+    I=$((I+1))
+  done
+  ;;
+  stop)
+  printf "%-50s" "Stopping compasswatch"
+  I=0
+  for CONFIG in `ls -f <%= @conf_dir %>/*/config.rb`; do
+    PID=`cat /var/run/compasswatch${I}.pid`
+            
+    if [ -f /var/run/compasswatch${I}.pid ]; then
+      kill -HUP $PID
+      printf "%s\n" "Ok"
+      rm -f /var/run/compasswatch${I}.pid
+    else
+      printf "%s\n" "pidfile not found"
+    fi
+    I=$((I+1))
+  done
+  ;;
+
+  restart)
+  $0 stop
+  $0 start
+  ;;
+
+  *)
+  echo "Usage: $0 {status|start|stop|restart}"
+  exit 1
+esac
