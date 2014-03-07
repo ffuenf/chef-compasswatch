@@ -1,4 +1,4 @@
-actions :install, :setup
+actions :setup
 default_action :setup
 
 attribute :name, :kind_of => String, :name_attribute => true

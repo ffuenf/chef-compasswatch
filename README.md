@@ -20,7 +20,7 @@ include_recipe "compasswatch"
 ATTENTION: name this cookbook "compasswatch" if you want to use the LWRP like this:
 ```ruby
 compasswatch "YOURPROJECT" do
-	action :install
+	action :setup
 end
 ```
 
