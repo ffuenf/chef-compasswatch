@@ -3,7 +3,7 @@
 case "$1" in
   start)
   printf "%-50s" "Starting compasswatch..."
-	
+  
   I=0
   for CONFIG in `ls -f <%= @conf_dir %>/*/config.rb`; do
     PID=`compass watch -q --poll -c $CONFIG > <%= @log_dir %>/compasswatch.log 2>&1 & echo $!`
@@ -11,14 +11,14 @@ case "$1" in
       printf "%s\n" "Fail"
     else
       echo $PID > /var/run/compasswatch${I}.pid
-      printf "%s\n" "Ok"
+      printf "%s\n" "${I} Ok"
     fi
     I=$((I+1))
   done
   ;;
   status)
   printf "%-50s" "Checking compasswatch..."
-		
+  
   I=0
   for CONFIG in `ls -f <%= @conf_dir %>/*/config.rb`; do
     if [ -f /var/run/compasswatch${I}.pid ]; then
@@ -38,24 +38,21 @@ case "$1" in
   printf "%-50s" "Stopping compasswatch"
   I=0
   for CONFIG in `ls -f <%= @conf_dir %>/*/config.rb`; do
-    PID=`cat /var/run/compasswatch${I}.pid`
-            
     if [ -f /var/run/compasswatch${I}.pid ]; then
+      PID=`cat /var/run/compasswatch${I}.pid`
       kill -HUP $PID
-      printf "%s\n" "Ok"
+      printf "%s\n" "${I} Ok"
       rm -f /var/run/compasswatch${I}.pid
-    else
-      printf "%s\n" "pidfile not found"
     fi
     I=$((I+1))
   done
   ;;
-
+  
   restart)
   $0 stop
   $0 start
   ;;
-
+  
   *)
   echo "Usage: $0 {status|start|stop|restart}"
   exit 1
