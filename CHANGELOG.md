@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of chef-compasswatch.
 
+## 1.2.1:
+
+* update/integrate testsuites: test-kitchen, foodcritic, rubocop, travis-ci
+
 ## 1.2.0:
 
 * refactor stop/restart command
