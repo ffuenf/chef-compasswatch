@@ -1,9 +1,9 @@
-maintainer  'Achim Rosenhagen'
+maintainer 'Achim Rosenhagen'
 maintainer_email 'a.rosenhagen@ffuenf.de'
 license 'Apache 2.0'
 description 'installs/configures compasswatch'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-name  'compasswatch'
+name 'compasswatch'
 version '1.2.1'
 
 %w(
