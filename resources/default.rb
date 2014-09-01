@@ -8,7 +8,7 @@ attribute :project_path, kind_of: String, default: ''
 attribute :http_path, kind_of: String, default: '/'
 attribute :css_dir, kind_of: String, default: '/'
 attribute :css_path, kind_of: String, default: ''
-attribute :http_stylesheets_path, kind_of: String
+attribute :http_stylesheets_path, kind_of: String, default: ''
 attribute :sass_dir, kind_of: String, default: 'sass'
 attribute :sass_path, kind_of: String, default: ''
 attribute :images_dir, kind_of: String, default: 'images'
