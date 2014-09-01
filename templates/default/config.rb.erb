@@ -1,66 +1,66 @@
 	project_type = <%= @project_type %> 
 	environment = <%= @environment %>
-<% if !@project_path.empty? %>
+<% unless @project_path.empty? %>
 	project_path = "<%= @project_path %>"
 <% end %>
 	http_path = "<%= @http_path %>"
 	css_dir = "<%= @css_dir %>"
-<% if !@css_path.empty? %>
+<% unless @css_path.empty? %>
 	css_path = "<%= @css_path %>"
 <% end %>
-<% if !@http_stylesheets_path.empty? %>
+<% unless @http_stylesheets_path.empty? %>
 	http_stylesheets_path = "<%= @http_stylesheets_path %>"
 <% end %>
 	sass_dir = "<%= @sass_dir %>"
-<% if !@sass_path.empty? %>
+<% unless @sass_path.empty? %>
 	sass_path = "<%= @sass_path %>"
 <% end %>
 	images_dir = "<%= @images_dir %>"
-<% if !@images_path.empty? %>
+<% unless @images_path.empty? %>
 	images_path = "<%= @images_path %>"
 <% end %>
-<% if !@http_images_path.empty? %>
+<% unless @http_images_path.empty? %>
 	http_images_path = "<%= @http_images_path %>"
 <% end %>
-<% if !@generated_images_dir.empty? %>
+<% unless @generated_images_dir.empty? %>
 	generated_images_dir = "<%= @generated_images_dir %>"
 <% end %>
-<% if !@generated_images_path.empty? %>
+<% unless @generated_images_path.empty? %>
 	generated_images_path = "<%= @generated_images_path %>"
 <% end %>
-<% if !@http_generated_images_path.empty? %>
+<% unless @http_generated_images_path.empty? %>
 	http_generated_images_path = "<%= @http_generated_images_path %>"
 <% end %>
-<% if !@javascripts_dir.empty? %>
+<% unless @javascripts_dir.empty? %>
 	javascripts_dir = "<%= @javascripts_dir %>"
 <% end %>
-<% if !@javascripts_path.empty? %>
+<% unless @javascripts_path.empty? %>
 	javascripts_path = "<%= @javascripts_path %>"
 <% end %>
-<% if !@http_javascripts_path.empty? %>
+<% unless @http_javascripts_path.empty? %>
 	http_javascripts_path = "<%= @http_javascripts_path %>"
 <% end %>
 	output_style = <%= @output_style %>
 	relative_assets = <%= @relative_assets %>
-<% if !@additional_import_paths.empty? %>
+<% unless @additional_import_paths.empty? %>
 	additional_import_paths = <%= @additional_import_paths %>
 <% end %>
 	disable_warnings = <%= @disable_warnings %>
-<% if !@sass_options.empty? %>
+<% unless @sass_options.empty? %>
 	sass_options = <%= @sass_options %>
 <% end %>
 	line_comments = <%= @line_comments %>
 	preferred_syntax = <%= @preferred_syntax %>
-<% if !@fonts_dir.empty? %>
+<% unless @fonts_dir.empty? %>
 	fonts_dir = "<%= @fonts_dir %>"
 <% end %>
-<% if !@fonts_path.empty? %>
+<% unless @fonts_path.empty? %>
 	fonts_path = "<%= @fonts_path %>"
 <% end %>
-<% if !@http_fonts_path.empty? %>
+<% unless @http_fonts_path.empty? %>
 	http_fonts_path = "<%= @http_fonts_path %>"
 <% end %>
-<% if !@http_fonts_dir.empty? %>
+<% unless @http_fonts_dir.empty? %>
 	http_fonts_dir = "<%= @http_fonts_dir %>"
 <% end %>
 	sprite_engine = <%= @sprite_engine %>
