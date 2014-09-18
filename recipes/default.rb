@@ -3,6 +3,9 @@
 # # # # # # # # #
 
 gem_package 'compass'
+gem_package 'sass' do
+  version '~>3.4.4'
+end
 template "#{node['compasswatch']['install_dir']}/compasswatch" do
   cookbook 'compasswatch'
   source 'compasswatch.erb'
