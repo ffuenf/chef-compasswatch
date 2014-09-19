@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of chef-compasswatch.
 
+## 1.2.2:
+
+* fix styling issues; pin sass gem version
+
 ## 1.2.1:
 
 * update/integrate testsuites: test-kitchen, foodcritic, rubocop, travis-ci
