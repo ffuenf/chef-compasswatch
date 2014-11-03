@@ -9,8 +9,16 @@ RSpec.configure do |c|
   end
 end
 
+describe package('ruby1.9.1-dev') do
+  it { should be_installed }
+end
+
 describe package('compass') do
   it { should be_installed.by('gem') }
+end
+
+describe package('sass') do
+  it { should be_installed.by('gem').with_version('~>3.4.4') }
 end
 
 describe file('/etc/init.d/compasswatch') do

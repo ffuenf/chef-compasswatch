@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of chef-compasswatch.
 
+## 1.2.3:
+
+* require package ruby1.9.1-dev
+
 ## 1.2.2:
 
 * fix styling issues; pin sass gem version
