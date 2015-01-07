@@ -18,6 +18,7 @@ The following platforms are supported and tested:
 * Debian 6.x
 * Debian 7.x
 * Ubuntu 14.04.x
+* Ubuntu 14.10.x
 
 Other Debian family distributions are assumed to work.
 
@@ -57,7 +58,7 @@ License and Author
 
 - Author:: Achim Rosenhagen (<a.rosenhagen@ffuenf.de>)
 
-- Copyright:: 2014, ffuenf
+- Copyright:: 2015, ffuenf
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

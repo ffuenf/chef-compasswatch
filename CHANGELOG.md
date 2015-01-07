@@ -2,6 +2,11 @@
 
 This file is used to list changes made in each version of chef-compasswatch.
 
+## 1.2.4:
+
+* rewrite LWRP (fix checksum errors)
+* update/integrate testsuites: test-kitchen, foodcritic, rubocop, travis-ci
+
 ## 1.2.3:
 
 * require package ruby1.9.1-dev
