@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of chef-compasswatch.
 
+## 1.2.5:
+
+* do not autostart compasswatch
+
 ## 1.2.4:
 
 * rewrite LWRP (fix checksum errors)

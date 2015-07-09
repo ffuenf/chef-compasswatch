@@ -69,8 +69,5 @@ action :setup do
       )
       action :create_if_missing
     end
-    service 'compasswatch' do
-      action [:restart]
-    end
   end
 end
